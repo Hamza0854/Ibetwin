@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <title>Sports</title>
+    <!-- CSS Links -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- font awesome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+     <!-- custom css -->
+     <link rel="stylesheet" href="assets/css/style.css">
+     <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <!-- Top Section -->
+        <div class="nav-top">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-3 col-md-2">
+                        <div class="nav-left">
+                            <i class="fas fa-bars hamburger-icon"></i>
+                            <span class="az-text">A-Z</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-8 p-0">
+                        <div class="nav-center">
+                            <a class='live-link' href='detail.html'>
+                                <span class="live-text">Li</span>
+                            </a>
+                            <a class='logo-section' href='index.html'>
+                                <img src="assets/images/logo.png" alt="SPORTI 777 Logo" class="nav-logo-image">
+                            </a>
+                            <a href="detail.html" class="meine-wetten-link">
+                                <div class="meine-wetten">
+                                    <span>My Betsdka</span>
+                                   
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-3 col-md-2">
+                        <div class="nav-right">
+                            <div class="user-section" id="userSection">
+                                <i class="fas fa-user user-icon" id="userIcon"></i>
+                                <span class="punkt-text" id="profileText">€1,250.50</span>
+                            </div>
+                            
+                            <!-- Profile Dropdown Menu -->
+                            <div class="profile-dropdown" id="profileDropdown">
+                                <div class="profile-dropdown-content">
+                                    <!-- Search Bar -->
+                                    <div class="profile-search-section">
+                                        <input type="text" placeholder="Search Saved Ticket" class="profile-search-input">
+                                        <button class="profile-search-btn">Search</button>
+                                    </div>
+                                    
+                                    <!-- User Info -->
+                                    <div class="profile-user-info">
+                                        <div class="profile-user-details">
+                                            <div class="profile-username">emre10</div>
+                                            <div class="profile-balance">€50.00</div>
+                                        </div>
+                                        <div class="profile-overdraft">
+                                            <div class="profile-overdraft-label">Overdraft</div>
+                                            <div class="profile-overdraft-amount">€0.00</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Menu Items -->
+                                    <div class="profile-menu-items">
+                                        <div class="profile-menu-item">
+                                            <i class="fas fa-ticket-alt"></i>
+                                            <span>My Bets</span>
+                                        </div>
+                                        <div class="profile-menu-item">
+                                            <i class="fas fa-wallet"></i>
+                                            <span>Balance Account</span>
+                                        </div>
+                                        <div class="profile-menu-item">
+                                            <i class="fas fa-key"></i>
+                                            <span>Change Password</span>
+                                        </div>
+                                        <div class="profile-menu-item">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span>Info & Regulations</span>
+                                        </div>
+                                        <div class="profile-menu-item">
+                                            <i class="fas fa-comments"></i>
+                                            <span>Live Chat Support</span>
+                                        </div>
+                                        <div class="profile-menu-item">
+                                            <i class="fas fa-sign-out-alt"></i>
+                                            <span>Logout</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Section - Sports -->
+        <div class="live-nav-bottom">
+            <div class="container-fluid p-0">
+                <div class="live-sports-container">
+                    <a href="detail.html" class="live-sport-item" data-sport="football">
+                        <img src="assets/images/navimages/soccer.svg" alt="Soccer" class="live-sport-icon">
+                        <span class="live-sport-name">Fußball</span>
+                    </a>
+                    <a href="detail.html" class="live-sport-item" data-sport="tennis">
+                        <img src="assets/images/navimages/tennis.svg" alt="Tennis" class="live-sport-icon">
+                        <span class="live-sport-name">Tennis</span>
+                    </a>
+                    <a href="detail.html" class="live-sport-item" data-sport="basketball">
+                        <img src="assets/images/navimages/basketball.svg" alt="Basketball" class="live-sport-icon">
+                        <span class="live-sport-name">Basketball</span>
+                    </a>
+                    <a href="detail.html" class="live-sport-item" data-sport="volleyball">
+                        <img src="assets/images/navimages/volleyball.svg" alt="Volleyball" class="live-sport-icon">
+                        <span class="live-sport-name">Volleyball</span>
+                    </a>
+                    <a href="detail.html" class="live-sport-item" data-sport="ice_hockey">
+                        <img src="assets/images/navimages/ice_hockey.svg" alt="Ice Hockey" class="live-sport-icon">
+                        <span class="live-sport-name">Eishockey</span>
+                    </a>
+                    <a href="detail.html" class="live-sport-item" data-sport="american_football">
+                        <img src="assets/images/navimages/american_football.svg" alt="American Football" class="live-sport-icon">
+                        <span class="live-sport-name">American Football</span>
+                    </a>
+                    <a href="detail.html" class="live-sport-item" data-sport="cricket">
+                        <img src="assets/images/navimages/cricket.svg" alt="Rugby" class="live-sport-icon">
+                        <span class="live-sport-name">Rugby</span>
+                    </a>
+                    <a href="detail.html" class="live-sport-item" data-sport="handball">
+                        <img src="assets/images/navimages/handball.svg" alt="Handball" class="live-sport-icon">
+                        <span class="live-sport-name">Handball</span>
+                    </a>
+                    <a href="detail.html" class="live-sport-item" data-sport="baseball">
+                        <img src="assets/images/navimages/baseball.svg" alt="Baseball" class="live-sport-icon">
+                        <span class="live-sport-name">Baseball</span>
+                    </a>
+                  
+                  
+                  
+                   
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+
+    
+
+    <!-- Filter Bar Section -->
+    <section class="filter-bar-section">
+        <div class="container-fluid px-0">
+            <div class="filter-bar">
+                <div class="filter-left">
+                    <span class="filter-category">Futbol</span>
+                    <i class="fas fa-search filter-search-icon" id="searchIcon"></i>
+                </div>
+                <div class="filter-right">
+                    <div class="filter-dropdown-container">
+                        <div class="filter-dropdown-header" id="filterDropdownHeader">
+                            <span class="filter-text">Rezultati Final</span>
+                            <i class="fas fa-chevron-down filter-dropdown-icon"></i>
+                        </div>
+                        <div class="filter-dropdown-menu" id="filterDropdownMenu">
+                            <div class="filter-dropdown-item" data-value="goli-i-radhes">
+                                <span class="filter-option-text">Goli i Radhës</span>
+                            </div>
+                            <div class="filter-dropdown-item" data-value="totali-i-golave">
+                                <span class="filter-option-text">Totali i Golave</span>
+                            </div>
+                            <div class="filter-dropdown-item" data-value="gol-gol">
+                                <span class="filter-option-text">Gol/Gol</span>
+                            </div>
+                            <div class="filter-dropdown-item" data-value="totali-i-korneve">
+                                <span class="filter-option-text">Totali i Korneve</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-input-container" id="searchInputContainer">
+                    <input type="text" placeholder="Search matches..." class="search-input-transparent" id="searchInput">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Section -->
+
+    <div id="football">
+        <section class="live-section pb-0">
+            <!-- add bg change class here in container fluid please -->
+            <div class="container-fluid px-0 live-container">
+                <div class="live-date-header">
+                    <span class="live-date-text">India - Mumbai</span>
+                    <div class="live-odds-headers">
+                        <span class="live-odds-header">1</span>
+                        <span class="live-odds-header">X</span>
+                        <span class="live-odds-header">2</span>
+                    </div>
+                </div>
+                
+                 <div class="live-matches-list   ">
+                    
+                    
+                    <div class="live-match-row">
+                        <div  class="live-match-info">
+                            <a href="detail.html" class="live-match-left-content">
+                                <div class="live-team-names">
+                                    <div class="live-team-name">Volta Redonda RJ</div>
+                                    <div class="live-team-name">Atletico GO</div>
+                                </div>
+                                <div class="live-match-details">
+                                    <span class="live-match-time">00:00</span>
+                                    <span class="live-match-id">1157</span>
+                                    <i class="fas fa-chevron-right live-chevron-icon"></i>
+                                </div>
+                            </a>
+                            <div class="live-score-display">
+                                <div class="live-score-value">0</div>
+                                <div class="live-score-value">0</div>
+                                <div class="stats-icon-container">
+                                    <img src="assets/images/stats-icon.svg" alt="Stats" class="stats-icon">
+                                    <div class="stats-popup">
+                                        <div class="stats-popup-inner">
+                                            <div class="stats-column">
+                                                <div class="stats-header-icon red-flag">🏴</div>
+                                                <span class="stats-value">2</span>
+                                                <span class="stats-value">2</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color yellow"></div>
+                                                <span class="stats-value">1</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color red"></div>
+                                                <span class="stats-value">0</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                        </div>
+                                        <div class="stats-popup-arrow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="live-match-odds">
+                            <a  href="detail.html" class="live-odd-value">0.98</a>
+                            <a href="detail.html" class="live-odd-value">2.30</a>
+                            <a href="detail.html" class="live-odd-value">2.60</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="live-match-row">
+                        <div  class="live-match-info">
+                            <a href="detail.html" class="live-match-left-content">
+                                <div class="live-team-names">
+                                    <div class="live-team-name">Volta Redonda RJ</div>
+                                    <div class="live-team-name">Atletico GO</div>
+                                </div>
+                                <div class="live-match-details">
+                                    <span class="live-match-time">00:00</span>
+                                    <span class="live-match-id">1157</span>
+                                    <i class="fas fa-chevron-right live-chevron-icon"></i>
+                                </div>
+                            </a>
+                            <div class="live-score-display">
+                                <div class="live-score-value">0</div>
+                                <div class="live-score-value">0</div>
+                                <div class="stats-icon-container">
+                                    <img src="assets/images/stats-icon.svg" alt="Stats" class="stats-icon">
+                                    <div class="stats-popup">
+                                        <div class="stats-popup-inner">
+                                            <div class="stats-column">
+                                                <div class="stats-header-icon red-flag">🏴</div>
+                                                <span class="stats-value">2</span>
+                                                <span class="stats-value">2</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color yellow"></div>
+                                                <span class="stats-value">1</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color red"></div>
+                                                <span class="stats-value">0</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                        </div>
+                                        <div class="stats-popup-arrow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="live-match-odds">
+                            <a  href="detail.html" class="live-odd-value">0.98</a>
+                            <a href="detail.html" class="live-odd-value">2.30</a>
+                            <a href="detail.html" class="live-odd-value">2.60</a>
+                        </div>
+                    </div>
+
+                    <div class="live-match-row">
+                        <div  class="live-match-info">
+                            <a href="detail.html" class="live-match-left-content">
+                                <div class="live-team-names">
+                                    <div class="live-team-name">Volta Redonda RJ</div>
+                                    <div class="live-team-name">Atletico GO</div>
+                                </div>
+                                <div class="live-match-details">
+                                    <span class="live-match-time">00:00</span>
+                                    <span class="live-match-id">1157</span>
+                                    <i class="fas fa-chevron-right live-chevron-icon"></i>
+                                </div>
+                            </a>
+                            <div class="live-score-display">
+                                <div class="live-score-value">0</div>
+                                <div class="live-score-value">0</div>
+                                <div class="stats-icon-container">
+                                    <img src="assets/images/stats-icon.svg" alt="Stats" class="stats-icon">
+                                    <div class="stats-popup">
+                                        <div class="stats-popup-inner">
+                                            <div class="stats-column">
+                                                <div class="stats-header-icon red-flag">🏴</div>
+                                                <span class="stats-value">2</span>
+                                                <span class="stats-value">2</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color yellow"></div>
+                                                <span class="stats-value">1</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color red"></div>
+                                                <span class="stats-value">0</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                        </div>
+                                        <div class="stats-popup-arrow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="live-match-odds">
+                            <a  href="detail.html" class="live-odd-value">0.98</a>
+                            <a href="detail.html" class="live-odd-value">2.30</a>
+                            <a href="detail.html" class="live-odd-value">2.60</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="live-match-row">
+                        <div  class="live-match-info">
+                            <a href="detail.html" class="live-match-left-content">
+                                <div class="live-team-names">
+                                    <div class="live-team-name">Volta Redonda RJ</div>
+                                    <div class="live-team-name">Atletico GO</div>
+                                </div>
+                                <div class="live-match-details">
+                                    <span class="live-match-time">00:00</span>
+                                    <span class="live-match-id">1157</span>
+                                    <i class="fas fa-chevron-right live-chevron-icon"></i>
+                                </div>
+                            </a>
+                            <div class="live-score-display">
+                                <div class="live-score-value">0</div>
+                                <div class="live-score-value">0</div>
+                                <div class="stats-icon-container">
+                                    <img src="assets/images/stats-icon.svg" alt="Stats" class="stats-icon">
+                                    <div class="stats-popup">
+                                        <div class="stats-popup-inner">
+                                            <div class="stats-column">
+                                                <div class="stats-header-icon red-flag">🏴</div>
+                                                <span class="stats-value">2</span>
+                                                <span class="stats-value">2</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color yellow"></div>
+                                                <span class="stats-value">1</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color red"></div>
+                                                <span class="stats-value">0</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                        </div>
+                                        <div class="stats-popup-arrow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="live-match-odds">
+                            <a  href="detail.html" class="live-odd-value">0.98</a>
+                            <a href="detail.html" class="live-odd-value">2.30</a>
+                            <a href="detail.html" class="live-odd-value">2.60</a>
+                        </div>
+                    </div>
+    
+                    
+                    
+                    
+                </div>
+            </div>
+        </section>
+        <section class="live-section pb-0">
+            <div class="container-fluid px-0">
+                <div class="live-date-header">
+                    <span class="live-date-text">India - Mumbai</span>
+                    <div class="live-odds-headers">
+                        <span class="live-odds-header">1</span>
+                        <span class="live-odds-header">X</span>
+                        <span class="live-odds-header">2</span>
+                    </div>
+                </div>
+                
+                 <div class="live-matches-list">
+                    
+                    
+                    <div class="live-match-row">
+                        <a href="detail.html" class="live-match-info">
+                            <div class="live-match-left-content">
+                                <div class="live-team-names">
+                                    <div class="live-team-name">ADC Juan Pablo II</div>
+                                    <div class="live-team-name">Deportivo Garcilaso</div>
+                                </div>
+                                <div class="live-match-details">
+                                    <span class="live-match-time">22:15</span>
+                                    <span class="live-match-id">3089</span>
+                                    <i class="fas fa-chevron-right live-chevron-icon"></i>
+                                </div>
+                            </div>
+                            <div class="live-score-display">
+                                <div class="live-score-value">0</div>
+                                <div class="live-score-value">0</div>
+                                <div class="stats-icon-container">
+                                    <img src="assets/images/stats-icon.svg" alt="Stats" class="stats-icon">
+                                    <div class="stats-popup">
+                                        <div class="stats-popup-inner">
+                                            <div class="stats-column">
+                                                <div class="stats-header-icon red-flag">🏴</div>
+                                                <span class="stats-value">2</span>
+                                                <span class="stats-value">2</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color yellow"></div>
+                                                <span class="stats-value">1</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color red"></div>
+                                                <span class="stats-value">0</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                        </div>
+                                        <div class="stats-popup-arrow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="live-match-odds">
+                            <a  href="detail.html" class="live-odd-value">0.98</a>
+                            <a href="detail.html" class="live-odd-value">2.30</a>
+                            <a href="detail.html" class="live-odd-value">2.60</a>
+                        </div>
+                    </div>
+    
+                    
+                    
+                    <div class="live-match-row">
+                        <a href="detail.html" class="live-match-info">
+                            <div class="live-match-left-content">
+                                <div class="live-team-names">
+                                    <div class="live-team-name">Volta Redonda RJ</div>
+                                    <div class="live-team-name">Atletico GO</div>
+                                </div>
+                                <div class="live-match-details">
+                                    <span class="live-match-time">00:00</span>
+                                    <span class="live-match-id">1157</span>
+                                    <i class="fas fa-chevron-right live-chevron-icon"></i>
+                                </div>
+                            </div>
+                            <div class="live-score-display">
+                                <div class="live-score-value">0</div>
+                                <div class="live-score-value">0</div>
+                                <div class="stats-icon-container">
+                                    <img src="assets/images/stats-icon.svg" alt="Stats" class="stats-icon">
+                                    <div class="stats-popup">
+                                        <div class="stats-popup-inner">
+                                            <div class="stats-column">
+                                                <div class="stats-header-icon red-flag">🏴</div>
+                                                <span class="stats-value">2</span>
+                                                <span class="stats-value">2</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color yellow"></div>
+                                                <span class="stats-value">1</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color red"></div>
+                                                <span class="stats-value">0</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                        </div>
+                                        <div class="stats-popup-arrow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="live-match-odds">
+                            <a  href="detail.html" class="live-odd-value">0.98</a>
+                            <a href="detail.html" class="live-odd-value">2.30</a>
+                            <a href="detail.html" class="live-odd-value">2.60</a>
+                        </div>
+                    </div>
+    
+                    
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <div id="tennis">
+        <section class="live-section pb-0">
+            <div class="container-fluid px-0 live-container">
+                <div class="live-date-header">
+                    <span class="live-date-text">ATP Tour - Miami</span>
+                    <div class="live-odds-headers">
+                        <span class="live-odds-header">1</span>
+                        <span class="live-odds-header">X</span>
+                        <span class="live-odds-header">2</span>
+                    </div>
+                </div>
+                
+                 <div class="live-matches-list">
+                    
+                    
+                    <div class="live-match-row">
+                        <div  class="live-match-info">
+                            <a href="detail.html" class="live-match-left-content">
+                                <div class="live-team-names">
+                                    <div class="live-team-name">Volta Redonda RJ</div>
+                                    <div class="live-team-name">Atletico GO</div>
+                                </div>
+                                <div class="live-match-details">
+                                    <span class="live-match-time">00:00</span>
+                                    <span class="live-match-id">1157</span>
+                                    <i class="fas fa-chevron-right live-chevron-icon"></i>
+                                </div>
+                            </a>
+                            <div class="live-score-display">
+                                <div class="live-score-value">0</div>
+                                <div class="live-score-value">0</div>
+                                <div class="stats-icon-container">
+                                    <img src="assets/images/stats-icon.svg" alt="Stats" class="stats-icon">
+                                    <div class="stats-popup">
+                                        <div class="stats-popup-inner">
+                                            <div class="stats-column">
+                                                <div class="stats-header-icon red-flag">🏴</div>
+                                                <span class="stats-value">2</span>
+                                                <span class="stats-value">2</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color yellow"></div>
+                                                <span class="stats-value">1</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color red"></div>
+                                                <span class="stats-value">0</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                        </div>
+                                        <div class="stats-popup-arrow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="live-match-odds">
+                            <a  href="detail.html" class="live-odd-value">0.98</a>
+                            <a href="detail.html" class="live-odd-value">2.30</a>
+                            <a href="detail.html" class="live-odd-value">2.60</a>
+                        </div>
+                    </div>
+    
+                    
+                    
+                    
+                </div>
+            </div>
+        </section>
+        
+
+    </div>
+
+    <div id="basketball">
+        <section class="live-section pb-0">
+            <div class="container-fluid px-0 live-container">
+                <div class="live-date-header">
+                    <span class="live-date-text">NBA - Western Conference</span>
+                    <div class="live-odds-headers">
+                        <span class="live-odds-header">1</span>
+                        <span class="live-odds-header">X</span>
+                        <span class="live-odds-header">2</span>
+                    </div>
+                </div>
+                
+                 <div class="live-matches-list">
+                    
+                    
+                    <div class="live-match-row">
+                        <div  class="live-match-info">
+                            <a href="detail.html" class="live-match-left-content">
+                                <div class="live-team-names">
+                                    <div class="live-team-name">Volta Redonda RJ</div>
+                                    <div class="live-team-name">Atletico GO</div>
+                                </div>
+                                <div class="live-match-details">
+                                    <span class="live-match-time">00:00</span>
+                                    <span class="live-match-id">1157</span>
+                                    <i class="fas fa-chevron-right live-chevron-icon"></i>
+                                </div>
+                            </a>
+                            <div class="live-score-display">
+                                <div class="live-score-value">0</div>
+                                <div class="live-score-value">0</div>
+                                <div class="stats-icon-container">
+                                    <img src="assets/images/stats-icon.svg" alt="Stats" class="stats-icon">
+                                    <div class="stats-popup">
+                                        <div class="stats-popup-inner">
+                                            <div class="stats-column">
+                                                <div class="stats-header-icon red-flag">🏴</div>
+                                                <span class="stats-value">2</span>
+                                                <span class="stats-value">2</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color yellow"></div>
+                                                <span class="stats-value">1</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                            <div class="stats-column">
+                                                <div class="stats-header-color red"></div>
+                                                <span class="stats-value">0</span>
+                                                <span class="stats-value">0</span>
+                                            </div>
+                                        </div>
+                                        <div class="stats-popup-arrow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="live-match-odds">
+                            <a  href="detail.html" class="live-odd-value">0.98</a>
+                            <a href="detail.html" class="live-odd-value">2.30</a>
+                            <a href="detail.html" class="live-odd-value">2.60</a>
+                        </div>
+                    </div>
+    
+                    
+                    
+                    
+                </div>
+            </div>
+        </section>
+        <section class="live-section pb-0">
+            <div class="container-fluid px-0">
+                <div class="live-date-header">
+                    <span class="live-date-text">EuroLeague - Playoffs</span>
+                    <div class="live-odds-headers">
+                        <span class="live-odds-header">1</span>
+                        <span class="live-odds-header">X</span>
+                        <span class="live-odds-header">2</span>
+                    </div>
+                </div>
+                
+                 <div class="live-matches-list">
+                    
+                    
+                    <div class="live-match-row">
+                        <a href="detail.html" class="live-match-info">
+                            <div class="live-match-left-content">
+                                <div class="live-team-names">
+                                    <div class="live-team-name">Real Madrid</div>
+                                    <div class="live-team-name">FC Barcelona</div>
+                                </div>
+                                <div class="live-match-details">
+                                    <span class="live-match-time">19:45</span>
+                                    <span class="live-match-id">7823</span>
+                                    <i class="fas fa-chevron-right live-chevron-icon"></i>
+                                </div>
+                            </div>
+                            <div class="live-score-display">
+                                <div class="live-score-value">8</div>
+                                <div class="live-score-value">9</div>
+                            </div>
+                        </a>
+                        <div class="live-match-odds">
+                            <a  href="detail.html" class="live-odd-value">2.15</a>
+                            <a href="detail.html" class="live-odd-value">1.70</a>
+                            <a href="detail.html" class="live-odd-value">2.30</a>
+                        </div>
+                    </div>
+    
+                    
+                    
+                    <div class="live-match-row">
+                        <a href="detail.html" class="live-match-info">
+                            <div class="live-match-left-content">
+                                <div class="live-team-names">
+                                    <div class="live-team-name">CSKA Moscow</div>
+                                    <div class="live-team-name">Olympiacos</div>
+                                </div>
+                                <div class="live-match-details">
+                                    <span class="live-match-time">21:15</span>
+                                    <span class="live-match-id">7824</span>
+                                    <i class="fas fa-chevron-right live-chevron-icon"></i>
+                                </div>
+                            </div>
+                            <div class="live-score-display">
+                                <div class="live-score-value">7</div>
+                                <div class="live-score-value">8</div>
+                            </div>
+                        </a>
+                        <div class="live-match-odds">
+                            <a  href="detail.html" class="live-odd-value">2.50</a>
+                            <a href="detail.html" class="live-odd-value">1.55</a>
+                            <a href="detail.html" class="live-odd-value">2.80</a>
+                        </div>
+                    </div>
+    
+                    
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+   
+
+    <!-- Fast Games Section -->
+    <section class="fast-games-section">
+        <div class="container-fluid">
+            <div class="section-header">
+                <h2 class="section-title">Slots</h2>
+            </div>
+            
+            <div class="games-container">
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game1.png" alt="Lucky Balls" class="game-img">
+                    </div>
+                </div>
+                
+
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game6.png" alt="Lucky Balls" class="game-img">
+                    </div>
+                </div>
+                
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game5.jpg" alt="Racing Dogs" class="game-img">
+                    </div>
+                </div>
+                
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game4.jpg" alt="Keno Austria" class="game-img">
+                    </div>
+                </div>
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game3.png" alt="Lucky Balls" class="game-img">
+                    </div>
+                </div>
+                
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game2.png" alt="Racing Dogs" class="game-img">
+                    </div>
+                </div>
+                
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game1.png" alt="Keno Austria" class="game-img">
+                    </div>
+                </div>
+
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game6.png" alt="Lucky Balls" class="game-img">
+                    </div>
+                </div>
+                
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game5.jpg" alt="Racing Dogs" class="game-img">
+                    </div>
+                </div>
+                
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game4.jpg" alt="Keno Austria" class="game-img">
+                    </div>
+                </div>
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game3.png" alt="Lucky Balls" class="game-img">
+                    </div>
+                </div>
+                
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game2.png" alt="Racing Dogs" class="game-img">
+                    </div>
+                </div>
+                
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game1.png" alt="Keno Austria" class="game-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Most Section -->
+      <section class="fast-games-section">
+        <div class="container-fluid">
+            <div class="section-header">
+                <h2 class="section-title">Live Casino</h2>
+            </div>
+            
+            <div class="games-container">
+                
+                
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game1.png" alt="Racing Dogs" class="game-img">
+                    </div>
+                </div>
+                
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game2.png" alt="Keno Austria" class="game-img">
+                    </div>
+                </div>
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game3.png" alt="Lucky Balls" class="game-img">
+                    </div>
+                </div>
+
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game6.png" alt="Lucky Balls" class="game-img">
+                    </div>
+                </div>
+                
+                <div class="game-thumbnail2">
+                    <div class="game-image">
+                        <img src="assets/images/game5.jpg" alt="Racing Dogs" class="game-img">
+                    </div>
+                </div>
+               
+               
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar-menu" id="sidebarMenu">
+        <div class="sidebar-header">
+            <i class="fas fa-times close-icon" id="closeSidebar"></i>
+        </div>
+        <div class="sidebar-content">
+            <!-- Search Bar -->
+            <div class="search-section">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Suchen..." class="search-input">
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="nav-tabs">
+                <div class="nav-tab active" data-tab="sport">
+                    <img src="assets/images/tab1.svg" alt="Sport" class="tab-icon">
+                    <span class="tab-text">Sport</span>
+                    <div class="tab-underline"></div>
+                </div>
+                <div class="nav-tab" data-tab="live">
+                    <img src="assets/images/tab2.svg" alt="Live" class="tab-icon">
+                    <span class="tab-text">Live</span>
+                </div>
+                <div class="nav-tab" data-tab="spiele">
+                    <img src="assets/images/tab3.svg" alt="Games" class="tab-icon">
+                    <span class="tab-text">Games</span>
+                </div>
+                <div class="nav-tab" data-tab="angebote">
+                    <img src="assets/images/tab4.svg" alt="Offers" class="tab-icon">
+                    <span class="tab-text">Offers</span>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="sidebar-main-content">
+                <div class="content-section active" id="sportContent">
+                    <h2 class="content-title">LISTA E PLOTE</h2>
+                    <div class="sports-list">
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/soccer.svg" alt="Soccer" class="sport-list-icon">
+                            <span class="sport-list-name">Fußball</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/tennis.svg" alt="Tennis" class="sport-list-icon">
+                            <span class="sport-list-name">Tennis</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/basketball.svg" alt="Basketball" class="sport-list-icon">
+                            <span class="sport-list-name">Basketball</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/volleyball.svg" alt="Volleyball" class="sport-list-icon">
+                            <span class="sport-list-name">Volleyball</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/ice_hockey.svg" alt="Ice Hockey" class="sport-list-icon">
+                            <span class="sport-list-name">Eishockey</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/american_football.svg" alt="American Football" class="sport-list-icon">
+                            <span class="sport-list-name">American Football</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/cricket.svg" alt="Rugby" class="sport-list-icon">
+                            <span class="sport-list-name">Rugby</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/handball.svg" alt="Handball" class="sport-list-icon">
+                            <span class="sport-list-name">Handball</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/baseball.svg" alt="Baseball" class="sport-list-icon">
+                            <span class="sport-list-name">Baseball</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/soccer.svg" alt="Futsal" class="sport-list-icon">
+                            <span class="sport-list-name">Futsal</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/aussie-rules.svg" alt="Australian Football" class="sport-list-icon">
+                            <span class="sport-list-name">Australian Football</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/mma.svg" alt="MMA" class="sport-list-icon">
+                            <span class="sport-list-name">MMA</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/waterpolo.svg" alt="Waterpolo" class="sport-list-icon">
+                            <span class="sport-list-name">Wasserball</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/boxing.svg" alt="Boxing" class="sport-list-icon">
+                            <span class="sport-list-name">Boxen</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/tennis.svg" alt="Table Tennis" class="sport-list-icon">
+                            <span class="sport-list-name">Tischtennis</span>
+                            <i class="far fa-star favorite-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other tab contents (initially hidden) -->
+                <div class="content-section" id="liveContent">
+                    <h2 class="content-title">Live Events</h2>
+                    <div class="sports-list">
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/soccer.svg" alt="Soccer" class="sport-list-icon">
+                            <span class="sport-list-name">Fußball</span>
+                            <span class="event-count">13 events</span>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/tennis.svg" alt="Tennis" class="sport-list-icon">
+                            <span class="sport-list-name">Tennis</span>
+                            <span class="event-count">2 events</span>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/basketball.svg" alt="Basketball" class="sport-list-icon">
+                            <span class="sport-list-name">Basketball</span>
+                            <span class="event-count">1 event</span>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/volleyball.svg" alt="Volleyball" class="sport-list-icon">
+                            <span class="sport-list-name">Volleyball</span>
+                            <span class="event-count">10 events</span>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/ice_hockey.svg" alt="Ice Hockey" class="sport-list-icon">
+                            <span class="sport-list-name">Eishockey</span>
+                            <span class="event-count">5 events</span>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/american_football.svg" alt="American Football" class="sport-list-icon">
+                            <span class="sport-list-name">American Football</span>
+                            <span class="event-count">3 events</span>
+                        </div>
+                        <div class="sport-list-item">
+                            <img src="assets/images/navimages/cricket.svg" alt="Rugby" class="sport-list-icon">
+                            <span class="sport-list-name">Rugby</span>
+                            <span class="event-count">1 event</span>
+                        </div>
+                       
+                       
+                    </div>
+                </div>
+
+                <div class="content-section" id="spieleContent">
+                    <h2 class="content-title">Games</h2>
+                    <div class="games-list">
+                        <div class="game-item">
+                            <div class="game-thumbnail">
+                                <img src="assets/images/game1.png" alt="Racing Dogs" class="game-image">
+                            </div>
+                            <div class="game-info">
+                                <span class="game-title">Slots</span>
+                            </div>
+                            <div class="game-arrow">
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="game-divider"></div>
+                        
+                        <div class="game-item">
+                            <div class="game-thumbnail">
+                                <img src="assets/images/game2.png" alt="Kohana Casino" class="game-image">
+                            </div>
+                            <div class="game-info">
+                                <span class="game-title">Live Casino</span>
+                            </div>
+                            <div class="game-arrow">
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section" id="angeboteContent">
+                    <h2 class="content-title">Offers</h2>
+                    <div class="offers-container">
+                        <div class="dropdown-header" id="dropdownHeader">
+                            <span class="dropdown-text">Odd Display Type: <span class="selected-option">Hong Kong</span></span>
+                            <div class="dropdown-arrow-container">
+                                <div class="dropdown-indicator"></div>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="dropdown-menu" id="dropdownMenu">
+                            <div class="dropdown-item" data-value="decimal">
+                                <span class="option-text">Decimal</span>
+                            </div>
+                            <div class="dropdown-item" data-value="fractional">
+                                <span class="option-text">Fractional</span>
+                            </div>
+                            <div class="dropdown-item active" data-value="hong-kong">
+                                <span class="option-text">Hong Kong</span>
+                            </div>
+                            <div class="dropdown-item" data-value="american">
+                                <span class="option-text">American</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container-fluid">
+            <!-- Back to Top -->
+            <div class="back-to-top">
+                <a href="detail.html" class="back-to-top-link">Back to Top</a>
+            </div>
+
+            <!-- Logo -->
+            <div class="footer-logo">
+                <img src="assets/images/logo.png" alt="SPORTI 777 Logo" class="footer-logo-image">
+            </div>
+
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <div class="language-option" id="languageDropdown">
+                    <span class="language-text">English</span>
+                    <i class="fas fa-chevron-down language-arrow"></i>
+                </div>
+                <div class="language-dropdown" id="languageMenu">
+                    <div class="language-item" data-lang="english">
+                        <span class="language-name">English</span>
+                    </div>
+                    <div class="language-item" data-lang="german">
+                        <span class="language-name">Deutsch</span>
+                    </div>
+                    
+                    <div class="language-item" data-lang="spanish">
+                        <span class="language-name">Español</span>
+                    </div>
+                  
+                </div>
+            </div>
+
+            <!-- Cookie Policy -->
+            <div class="cookie-policy">
+                <p class="policy-text">
+                    By accessing, continuing to use or navigating throughout this site you accept that we will use certain browser cookies to improve your customer experience with us. Our site only uses cookies which will improve your experience with us and will not interfere with your privacy. Please refer to our 
+                    <a href="detail.html" class="policy-link">Cookies Policy</a> 
+                    for 
+                    <a href="detail.html" class="policy-link">further information</a> 
+                    on our use of cookies and how you can disable or manage their use should you wish.
+                </p>
+            </div>
+
+            <!-- Responsible Gambling -->
+            <div class="responsible-gambling">
+                <p class="gambling-text">
+                    Gambling can be addictive, please play responsibly. For information on support measures, please visit our 
+                    <a href="detail.html" class="gambling-link">Responsible Gambling Help page</a>.
+                </p>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                <p class="copyright-text">© 2016-2020. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript Links -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

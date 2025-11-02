@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21.843" height="23" viewBox="0 0 21.843 23">
+  <g id="snooker" transform="translate(-1.007 -0.66)">
+    <path id="Path_1676" data-name="Path 1676" d="M5.04,6.81a4.045,4.045,0,0,1,4.028,4.439A4.048,4.048,0,0,0,6.827,14.49,4.045,4.045,0,1,1,5.042,6.81Z" transform="translate(0 4.19)" fill="#0e0d12" fill-rule="evenodd"/>
+    <path id="Path_1677" data-name="Path 1677" d="M6.123,3.075A3.467,3.467,0,0,0,5.082,5.827a3.213,3.213,0,1,1,.8-4.4,3.521,3.521,0,0,0,.205,1.555l.037.1Z" transform="translate(3.265 3.761)" fill="#df0411"/>
+    <path id="Path_1678" data-name="Path 1678" d="M6.024,3.338a3.463,3.463,0,0,0-.886,1.538A3.477,3.477,0,0,0,.207,4.37,3.213,3.213,0,0,1,5.8,1.332,3.5,3.5,0,0,0,5.985,3.24l.039.1Z" transform="translate(9.849 1.854)" fill="#df0411"/>
+    <circle id="Ellipse_94" data-name="Ellipse 94" cx="3.579" cy="3.579" r="3.579" transform="translate(14.262 9.174)" fill="#df0411"/>
+    <path id="Path_1679" data-name="Path 1679" d="M10.4,5.05a3.213,3.213,0,1,1,5.34,1.014A3.477,3.477,0,0,0,10.4,5.05Z" transform="translate(6.247 0)" fill="#df0411"/>
+    <path id="Path_1680" data-name="Path 1680" d="M12.245,6.654a4.091,4.091,0,0,0-1.992,3.541,3.213,3.213,0,1,1,1.992-3.539Z" transform="translate(3.31 2.269)" fill="#751a1a" fill-rule="evenodd"/>
+    <path id="Path_1681" data-name="Path 1681" d="M0,2.591A3.215,3.215,0,1,1,5.726,5.14,4.089,4.089,0,0,0,.488,3.8,3.455,3.455,0,0,0,0,2.593Z" transform="translate(15.309 4.991)" fill="#df0411"/>
+    <path id="Path_1682" data-name="Path 1682" d="M6.381,2.686A3.215,3.215,0,1,0,4.387,6.226V6.2A4.087,4.087,0,0,1,6.381,2.687Z" transform="translate(9.175 6.238)" fill="#df0411"/>
+    <circle id="Ellipse_95" data-name="Ellipse 95" cx="4.045" cy="4.045" r="4.045" transform="translate(7.379 15.57)" fill="#fdfdf1"/>
+  </g>
+</svg>
