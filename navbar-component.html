@@ -11,30 +11,33 @@
         body{
             font-family: BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Tahoma,Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Open Sans",sans-serif !important;
         }
-        /* Custom animations */
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-            }
-            to {
-                transform: translateX(0);
-            }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
         }
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        
         .slide-in {
             animation: slideIn 0.3s ease-out;
         }
-        
-        .fade-in {
-            animation: fadeIn 0.3s ease-out;
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        .tab-active {
+            color: white !important;
+        }
+        .tab-inactive {
+            border-bottom: 2px solid transparent;
+            color: #9ca3af;
         }
 
         /* Hide scrollbar for the offcanvas */
@@ -48,6 +51,21 @@
         #azBtn {
             margin: 0px !important;
         }
+        .logo-hover:hover {
+            transition: .3s;
+            transform: scale(1.05);
+            filter: brightness(1.2) contrast(1.2);
+        }
+        .set-font-courier {
+            font-family: 'Courier New', monospace;
+            margin-top: 3px;
+        }
+        .set-active-sidebar-pan {
+            filter: brightness(0) saturate(100%) invert(53%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(95%) contrast(88%);
+        }
+        .tab-active .set-active-sidebar-pan {
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(100%) contrast(100%);
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -57,32 +75,30 @@
         <div class="max-w-full mx-auto px-2">
             <div class="flex items-center justify-between h-14">
                 <!-- Left side - Hamburger & Logo -->
-                <div class="flex items-center space-x-3 w-auto md:w-[220px]">
+                <div class="flex items-center space-x-3 w-[70px] shrink-0 md:w-[220px]">
                     <!-- Hamburger Menu Button -->
-                    <button id="menuBtn" class="text-white hover:bg-[#ffffff1a] p-2 rounded transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
+                    <button id="menuBtn" class="text-white hover:bg-[#ffffff1a] py-2 rounded transition-colors">
+                        <i class="fas fa-bars hamburger-icon text-[#00ffb6] text-md lg:text-lg"></i>
                     </button>
                     
                     <!-- A-Z Button -->
-                    <button id="azBtn" class="m-0 text-white text-sm font-semibold hover:bg-[#ffffff1a] px-1 lg:px-2 py-2 rounded transition-colors">
+                    <button id="azBtn" class="m-0 text-[#ccc] text-xs lg:text-sm font-semibold hover:bg-[#ffffff1a] px-1 lg:px-2 py-2 rounded transition-colors">
                         A-Z
                     </button>
                 </div>
 
                 <!-- Center - Logo -->
                 <div class="flex-1 flex justify-between items-center">
-                    <div class="w-[90px]">
-                        <a href="#" class="text-sm text-[#ccc] inline-block p-4 hover:bg-[#ffffff1a]">Li</a>
+                    <div class="w-[55px] lg:w-[90px]">
+                        <a href="#" class="text-[13px] lg:text-sm text-[#ccc] inline-block p-4 hover:bg-[#ffffff1a]">Live</a>
                     </div>
                     <div class="flex items-center">
                         <div class="">
-                            <a href="#"><img src="assets/images/logo.png" alt="SPORTI 777 Logo" class="h-14"></a>
+                            <a href="#"><img src="assets/images/logo.png" alt="SPORTI 777 Logo" class="h-14 logo-hover"></a>
                         </div>
                     </div>
                     <div>
-                        <a href="#" class="text-sm text-[#ccc] block w-[90px] hover:bg-[#ffffff1a] hover:text-[#ffd700] p-2">My Betsdka</a>
+                        <a href="#" class="text-[13px] lg:text-sm text-[#ccc] block w-[55px] lg:w-[90px] text-center hover:bg-[#ffffff1a] hover:text-[#ffd700] p-0 lg:p-2">My Bets</a>
                     </div>
                 </div>
 
@@ -90,15 +106,15 @@
                 <div class="flex items-center space-x-4">
                     <!-- Balance -->
                     <div class="w-auto md:w-[220px]">
-                        <div class="text-center w-[60px] ml-auto">
+                        <div class="text-center w-[70px] lg:w-[110px] ml-auto">
                             <!-- User Icon -->
-                            <button id="userMenuBtn" class="mx-auto bg-[#ffffff1a] text-teal-900 rounded-full w-7 h-7 flex items-center justify-center hover:bg-yellow-400 transition-colors shadow-md">
+                            <button id="userMenuBtn" class="mx-auto bg-[#ffffff1a] text-teal-900 rounded-full w-6 h-6 flex items-center justify-center hover:bg-yellow-400 transition-colors shadow-md">
                                 <svg class="w-6 h-6" fill="#fff" viewBox="0 0 24 24">
                                     <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                                 </svg>
                             </button>
-                            <div class="text-white font-bold text-xs">
-                                €1,250.50
+                            <div class="text-white font-light text-[8px] lg:text-xs set-font-courier">
+                                EUR 8245317.50
                             </div>
                         </div>
                     </div>
@@ -108,64 +124,65 @@
     </nav>
 
     <!-- User Dropdown Menu -->
-    <div id="userDropdown" class="hidden fixed top-14 right-4 w-80 bg-white rounded-lg shadow-2xl z-50 fade-in">
-        <div class="p-4">
-            <!-- Search Box -->
-            <div class="mb-4">
-                <div class="relative">
-                    <input 
-                        type="text" 
-                        placeholder="Search Saved Ticket" 
-                        class="w-full pl-4 pr-24 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
-                    >
-                    <button class="absolute right-1 top-1 bg-teal-700 text-white px-6 py-1.5 rounded-md hover:bg-teal-800 transition-colors font-medium">
-                        Search
-                    </button>
-                </div>
-            </div>
-
-            <!-- User Info -->
-            <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-200">
+    <div id="userDropdown" class="hidden fixed top-14 right-1 lg:right-4 w-[300px] lg:w-[350px] bg-white rounded-lg shadow-2xl z-50 fade-in">
+        <div class="">
+            <!-- User Info Header -->
+            <div class="flex items-start justify-between mb-4 pb-4 border-b border-gray-200 p-4">
                 <div>
-                    <div class="text-gray-800 font-semibold text-base">emre10</div>
-                    <div class="text-teal-700 font-medium text-md">€50.00</div>
+                    <div class="text-gray-800 font-medium text-base">partner1</div>
+                    <div class="text-[#116E51] font-semibold text-sm">€8.245.317,50</div>
                 </div>
                 <div class="text-right">
-                    <div class="text-gray-500 text-sm">Overdraft</div>
-                    <div class="text-gray-800 font-semibold">€0.00</div>
+                    <div class="text-gray-500 text-xs mb-1">Role</div>
+                    <div class="text-gray-800 font-medium text-sm">Owner</div>
                 </div>
             </div>
 
             <!-- Menu Items -->
-            <div class="space-y-1">
-                <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-50 rounded-lg transition-colors group">
-                    <i class="fas fa-ticket-alt text-gray-500 w-5 group-hover:text-teal-700"></i>
-                    <span class="ml-3 text-gray-700 font-normal text-sm group-hover:text-teal-700">My Bets</span>
+            <div class="space-y-2">
+                <a href="#" class="flex items-center px-4 py-3 hover:bg-[#f8f9fa] transition-all duration-200 group border-b border-[#f0f0f0]">
+                    <i class="fas fa-users text-gray-600 text-base w-6 group-hover:text-teal-600 transition-colors"></i>
+                    <span class="ml-1 text-gray-700 font-normal text-sm group-hover:text-gray-900">User Management</span>
                 </a>
                 
-                <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-50 rounded-lg transition-colors group">
-                    <i class="fas fa-wallet text-gray-500 w-5 group-hover:text-teal-700"></i>
-                    <span class="ml-3 text-gray-700 font-normal text-sm group-hover:text-teal-700">Balance Account</span>
+                <a href="#" class="flex items-center px-4 py-3 hover:bg-[#f8f9fa] transition-all duration-200 group border-b border-[#f0f0f0]">
+                    <i class="fa-solid fa-money-bill text-gray-600 text-base w-6 group-hover:text-teal-600 transition-colors"></i>
+                    <span class="ml-1 text-gray-700 font-normal text-sm group-hover:text-gray-900">Finance</span>
                 </a>
                 
-                <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-50 rounded-lg transition-colors group">
-                    <i class="fas fa-key text-gray-500 w-5 group-hover:text-teal-700"></i>
-                    <span class="ml-3 text-gray-700 font-normal text-sm group-hover:text-teal-700">Change Password</span>
+                <a href="#" class="flex items-center px-4 py-3 hover:bg-[#f8f9fa] transition-all duration-200 group border-b border-[#f0f0f0]">
+                    <i class="fas fa-user text-gray-600 text-base w-6 group-hover:text-teal-600 transition-colors"></i>
+                    <span class="ml-1 text-gray-700 font-normal text-sm group-hover:text-gray-900">Add New User</span>
                 </a>
                 
-                <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-50 rounded-lg transition-colors group">
-                    <i class="fas fa-info-circle text-gray-500 w-5 group-hover:text-teal-700"></i>
-                    <span class="ml-3 text-gray-700 font-normal text-sm group-hover:text-teal-700">Info & Regulations</span>
+                <a href="#" class="flex items-center px-4 py-3 hover:bg-[#f8f9fa] transition-all duration-200 group border-b border-[#f0f0f0]">
+                    <i class="fas fa-ticket-alt text-gray-600 text-base w-6 group-hover:text-teal-600 transition-colors"></i>
+                    <span class="ml-1 text-gray-700 font-normal text-sm group-hover:text-gray-900">My Bets</span>
                 </a>
                 
-                <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-50 rounded-lg transition-colors group">
-                    <i class="fas fa-comments text-gray-500 w-5 group-hover:text-teal-700"></i>
-                    <span class="ml-3 text-gray-700 font-normal text-sm group-hover:text-teal-700">Live Chat Support</span>
+                <a href="#" class="flex items-center px-4 py-3 hover:bg-[#f8f9fa] transition-all duration-200 group border-b border-[#f0f0f0]">
+                    <i class="fas fa-wallet text-gray-600 text-base w-6 group-hover:text-teal-600 transition-colors"></i>
+                    <span class="ml-1 text-gray-700 font-normal text-sm group-hover:text-gray-900">Balance Account</span>
                 </a>
                 
-                <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-50 rounded-lg transition-colors group">
-                    <i class="fas fa-sign-out-alt text-gray-500 w-5 group-hover:text-teal-700"></i>
-                    <span class="ml-3 text-gray-700 font-normal text-sm group-hover:text-teal-700">Logout</span>
+                <a href="#" class="flex items-center px-4 py-3 hover:bg-[#f8f9fa] transition-all duration-200 group border-b border-[#f0f0f0]">
+                    <i class="fas fa-key text-gray-600 text-base w-6 group-hover:text-teal-600 transition-colors"></i>
+                    <span class="ml-1 text-gray-700 font-normal text-sm group-hover:text-gray-900">Change Password</span>
+                </a>
+                
+                <a href="#" class="flex items-center px-4 py-3 hover:bg-[#f8f9fa] transition-all duration-200 group border-b border-[#f0f0f0]">
+                    <i class="fas fa-info-circle text-gray-600 text-base w-6 group-hover:text-teal-600 transition-colors"></i>
+                    <span class="ml-1 text-gray-700 font-normal text-sm group-hover:text-gray-900">Info & Regulations</span>
+                </a>
+                
+                <a href="#" class="flex items-center px-4 py-3 hover:bg-[#f8f9fa] transition-all duration-200 group border-b border-[#f0f0f0]">
+                    <i class="fas fa-comments text-gray-600 text-base w-6 group-hover:text-teal-600 transition-colors"></i>
+                    <span class="ml-1 text-gray-700 font-normal text-sm group-hover:text-gray-900">Live Chat Support</span>
+                </a>
+                
+                <a href="#" class="flex items-center px-4 py-3 hover:bg-[#f8f9fa] transition-all duration-200 group border-b border-[#f0f0f0]">
+                    <i class="fas fa-sign-out-alt text-gray-600 text-base w-6 group-hover:text-teal-600 transition-colors"></i>
+                    <span class="ml-1 text-gray-700 font-normal text-sm group-hover:text-gray-900">Logout</span>
                 </a>
             </div>
         </div>
@@ -178,7 +195,7 @@
     <div id="sideMenu" class="hidden fixed top-0 left-0 h-full w-full lg:w-[700px] bg-[#2c2c2c] z-50 overflow-y-auto hide-scrollbar slide-in">
         <!-- Close Button -->
         <div class="flex justify-end p-4">
-            <button id="closeMenuBtn" class="text-gray-400 hover:text-white transition-colors">
+            <button id="closeMenuBtn" class="text-gray-400 hover:text-white transition-colors bg-[#565656] p-1 rounded-full">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -191,128 +208,278 @@
                 <input 
                     type="text" 
                     placeholder="Suchen..." 
-                    class="w-full pl-10 pr-4 py-3 bg-[#383838] text-white rounded-lg border border-[#383838] focus:outline-none focus:border-teal-500 placeholder-gray-500"
+                    class="w-full pl-10 pr-4 py-3 bg-[#383838] h-[47px] text-white text-sm rounded-lg border border-[#555] focus:outline-none focus:border-[#555] placeholder-gray-500"
                 >
                 <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
             </div>
         </div>
 
         <!-- Category Tabs -->
-        <div class="flex border-b border-gray-800 px-4 mb-6">
-            <button class="flex-1 flex flex-col items-center py-3 text-white border-b-2 border-[#2EC193]">
-                <i class="fas fa-futbol text-xl mb-1"></i>
-                <span class="text-xs">Sport</span>
+        <div class="flex border-b border-[#116E51] mx-4 mb-6">
+            <button class="tab-button flex-1 flex flex-col items-center py-3 tab-active" data-tab="sport">
+                <img src="assets/images/tab1.svg" alt="Sport" class="tab-icon h-[25px] w-[25px] set-active-sidebar-pan">
+                <span class="text-xs font-medium mt-2">Sport</span>
             </button>
-            <button class="flex-1 flex flex-col items-center py-3 text-gray-500 hover:text-white transition-colors">
-                <i class="fas fa-tv text-xl mb-1"></i>
-                <span class="text-xs">Live</span>
+            <button class="tab-button flex-1 flex flex-col items-center py-3 tab-inactive hover:text-white transition-colors" data-tab="live">
+                <img src="assets/images/tab2.svg" alt="Sport" class="tab-icon h-[25px] w-[25px]  set-active-sidebar-pan" style="">
+                <span class="text-xs font-medium mt-2">Live</span>
             </button>
-            <button class="flex-1 flex flex-col items-center py-3 text-gray-500 hover:text-white transition-colors">
-                <i class="fas fa-gamepad text-xl mb-1"></i>
-                <span class="text-xs">Games</span>
+            <button class="tab-button flex-1 flex flex-col items-center py-3 tab-inactive hover:text-white transition-colors" data-tab="games">
+                <img src="assets/images/tab3.svg" alt="Sport" class="tab-icon h-[25px] w-[25px] set-active-sidebar-pan">
+                <span class="text-xs font-medium mt-2">Games</span>
             </button>
-            <button class="flex-1 flex flex-col items-center py-3 text-gray-500 hover:text-white transition-colors">
-                <i class="fas fa-gift text-xl mb-1"></i>
-                <span class="text-xs">Offers</span>
+            <button class="tab-button flex-1 flex flex-col items-center py-3 tab-inactive hover:text-white transition-colors" data-tab="offers">
+                <img src="assets/images/tab4.svg" alt="Sport" class="tab-icon h-[25px] w-[25px] set-active-sidebar-pan">
+                <span class="text-xs font-medium mt-2">Offers</span>
             </button>
         </div>
 
-        <!-- Sports List -->
-        <div class="px-4">
-            <h3 class="text-[#2EC193] text-sm font-bold mb-4 uppercase tracking-wider">Lista e Plotë</h3>
+        <!-- Tab Contents -->
+        <div id="tabContent" class="px-4">
             
-            <div class="space-y-1">
-                <a href="#" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-colors group">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-futbol text-white text-lg"></i>
-                        <span class="text-white font-medium">Fußball</span>
-                    </div>
-                    <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
-                </a>
+            <!-- Sport Tab Content -->
+            <div id="sport-content" class="tab-content h-[80vh] overflow-y-auto overflow-x-hidden">
+                <h3 class="text-[#2EC193] text-sm font-bold mb-4 tracking-wider">Lista e Plotë</h3>
+                
+                <div class="space-y-1">
 
-                <a href="#" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-colors group">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-table-tennis text-white text-lg"></i>
-                        <span class="text-white font-medium">Tennis</span>
-                    </div>
-                    <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
-                </a>
+                    <a href="football.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/soccer.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Football</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
 
-                <a href="#" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-colors group">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-basketball-ball text-white text-lg"></i>
-                        <span class="text-white font-medium">Basketball</span>
-                    </div>
-                    <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
-                </a>
+                    <a href="tennis.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/tennis.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Tennis</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
 
-                <a href="#" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-colors group">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-volleyball-ball text-white text-lg"></i>
-                        <span class="text-white font-medium">Volleyball</span>
-                    </div>
-                    <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
-                </a>
+                    <a href="basketball.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/basketball.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Basketball</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
 
-                <a href="#" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-colors group">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-hockey-puck text-white text-lg"></i>
-                        <span class="text-white font-medium">Eishockey</span>
-                    </div>
-                    <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
-                </a>
+                    <a href="valleyball.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/volleyball.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Volleyball</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
 
-                <a href="#" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-colors group">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-football-ball text-white text-lg"></i>
-                        <span class="text-white font-medium">American Football</span>
-                    </div>
-                    <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
-                </a>
+                    <a href="eishockey.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/ice_hockey.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Eishockey</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
+                    <a href="american-football.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/american_football.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">American Football</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
+                    <a href="rugby.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/cricket.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Rugby</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
+                    <a href="handball.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/handball.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Handball</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
+                    <a href="baseball.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/baseball.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Baseball</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
+                    <a href="futsal.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/soccer.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Futsal</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
+                    <a href="australian-football.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/aussie-rules.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Australian Football</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
+                    <a href="mma.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/mma.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">MMA</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
+                    <a href="wasserball.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/waterpolo.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Wasserball</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
 
-                <a href="#" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-colors group">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-football-ball text-white text-lg"></i>
-                        <span class="text-white font-medium">Rugby</span>
-                    </div>
-                    <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
-                </a>
+                    <a href="#" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/boxing.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Boxen</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
 
-                <a href="#" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-colors group">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-hand-rock text-white text-lg"></i>
-                        <span class="text-white font-medium">Handball</span>
-                    </div>
-                    <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
-                </a>
-
-                <a href="#" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-colors group">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-baseball-ball text-white text-lg"></i>
-                        <span class="text-white font-medium">Baseball</span>
-                    </div>
-                    <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
-                </a>
-
-                <a href="#" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-colors group">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-futbol text-white text-lg"></i>
-                        <span class="text-white font-medium">Futsal</span>
-                    </div>
-                    <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
-                </a>
-
-                <a href="#" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-colors group">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-football-ball text-white text-lg"></i>
-                        <span class="text-white font-medium">Australian Football</span>
-                    </div>
-                    <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
-                </a>
+                    <a href="tischtenn.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/tennis.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Tischtennis</span>
+                        </div>
+                        <i class="far fa-star text-gray-600 group-hover:text-yellow-400 transition-all duration-300 ease-in-out"></i>
+                    </a>
+                    
+                </div>
             </div>
+
+            <!-- Live Tab Content -->
+            <div id="live-content" class="tab-content hidden h-[80vh] overflow-y-auto overflow-x-hidden">
+                <h3 class="text-[#2EC193] text-sm font-bold mb-4 tracking-wider">Live Events</h3>
+                
+                <div class="space-y-1">
+
+                    <a href="football.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/soccer.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Football</span>
+                        </div>
+                        <span class="text-[10px] lg:text-xs bg-[#ffffff1a] text-[#888] px-2 py-1 rounded-full">13 events</span>
+                    </a>
+
+                    <a href="tennis.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/tennis.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Tennis</span>
+                        </div>
+                        <span class="text-[10px] lg:text-xs bg-[#ffffff1a] text-[#888] px-2 py-1 rounded-full">13 events</span>
+                    </a>
+
+                    <a href="basketball.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/basketball.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Basketball</span>
+                        </div>
+                        <span class="text-[10px] lg:text-xs bg-[#ffffff1a] text-[#888] px-2 py-1 rounded-full">13 events</span>
+                    </a>
+
+                    <a href="valleyball.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/volleyball.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Volleyball</span>
+                        </div>
+                        <span class="text-[10px] lg:text-xs bg-[#ffffff1a] text-[#888] px-2 py-1 rounded-full">13 events</span>
+                    </a>
+
+                    <a href="eishockey.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/ice_hockey.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Eishockey</span>
+                        </div>
+                        <span class="text-[10px] lg:text-xs bg-[#ffffff1a] text-[#888] px-2 py-1 rounded-full">13 events</span>
+                    </a>
+                    <a href="american-football.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/american_football.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">American Football</span>
+                        </div>
+                        <span class="text-[10px] lg:text-xs bg-[#ffffff1a] text-[#888] px-2 py-1 rounded-full">13 events</span>
+                    </a>
+                    <a href="rugby.html" class="flex items-center justify-between px-3 py-3 hover:bg-[#116e511a] rounded-lg transition-all duration-300 ease-in-out group transform hover:translate-x-[4px]">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/images/navimages/cricket.svg" alt="Soccer" class="sport-icon w-6 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                            <span class="text-white text-sm font-medium">Rugby</span>
+                        </div>
+                        <span class="text-[10px] lg:text-xs bg-[#ffffff1a] text-[#888] px-2 py-1 rounded-full">13 events</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Games Tab Content -->
+            <div id="games-content" class="tab-content hidden h-[80vh] overflow-y-auto overflow-x-hidden">
+                <h3 class="text-[#2EC193] text-sm font-bold mb-4 tracking-wider">Games</h3>
+                
+                <div class="">
+                    <a href="#" class="flex items-center justify-between px-3 py-2 hover:bg-[#116e511a] rounded-lg transition-colors group border-b border-[#444]">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-[60px] h-[60px] rounded-lg flex items-center justify-center">
+                                <img src="assets/images/game1.png" alt="Racing Dogs" class="game-image h-[100%] w-[100%] object-covers rounded-lg">
+                            </div>
+                            <span class="text-white text-sm font-medium">Slots</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-600 group-hover:text-white transition-colors"></i>
+                    </a>
+                    <a href="#" class="flex items-center justify-between px-3 py-2 hover:bg-[#116e511a] rounded-lg transition-colors group border-b border-gray-800">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-[60px] h-[60px] rounded-lg flex items-center justify-center">
+                                <img src="assets/images/game2.png" alt="Racing Dogs" class="game-image h-[100%] w-[100%] object-covers rounded-lg">
+                            </div>
+                            <span class="text-white text-sm font-medium">Live Casino</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-600 group-hover:text-white transition-colors"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Offers Tab Content -->
+            <div id="offers-content" class="tab-content hidden h-[80vh] overflow-y-auto overflow-x-hidden">
+                <h3 class="text-[#2EC193] text-sm font-bold mb-4 tracking-wider">RugbyOffers</h3>
+                
+                <div class="space-y-3">
+                    <!-- Dropdown -->
+                    <div class="bg-[#383838] rounded-lg overflow-hidden">
+                        <button id="dropdownToggle" class="w-full flex items-center justify-between px-4 py-3 text-white hover:bg-[#404040] transition-colors">
+                            <span class="font-medium text-[13px] lg:text-sm">Odd Display Type: Hong Kong</span>
+                            <i id="dropdownIcon" class="fas fa-chevron-down text-gray-400 transition-transform duration-200"></i>
+                        </button>
+                        <div id="dropdownMenu" class="hidden bg-white">
+                            <div class="space-y-0">
+                                <button class="dropdown-option w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors border-b border-gray-200">
+                                    Decimal
+                                </button>
+                                <button class="dropdown-option w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors border-b border-gray-200">
+                                    Fractional
+                                </button>
+                                <button class="dropdown-option w-full text-left px-4 py-3 bg-[#d4f4e8] text-[#2EC193] font-medium border-b border-gray-200">
+                                    Hong Kong
+                                </button>
+                                <button class="dropdown-option w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors">
+                                    American
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="h-20"></div>
+        <!-- <div class="h-20"></div> -->
     </div>
 
     <!-- Main Content (Demo) -->
@@ -323,10 +490,19 @@
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
     </div>
 
     <script>
-        // Get elements
+        // Get all elements (existing + new)
         const menuBtn = document.getElementById('menuBtn');
         const azBtn = document.getElementById('azBtn');
         const userMenuBtn = document.getElementById('userMenuBtn');
@@ -334,6 +510,14 @@
         const sideMenu = document.getElementById('sideMenu');
         const userDropdown = document.getElementById('userDropdown');
         const overlay = document.getElementById('overlay');
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        // Dropdown elements (Offers tab)
+        const dropdownToggle = document.getElementById('dropdownToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const dropdownIcon = document.getElementById('dropdownIcon');
+        const dropdownOptions = document.querySelectorAll('.dropdown-option');
 
         // Toggle side menu
         function openSideMenu() {
@@ -350,41 +534,139 @@
 
         // Toggle user dropdown
         function toggleUserDropdown() {
-            const isHidden = userDropdown.classList.contains('hidden');
-            if (isHidden) {
-                userDropdown.classList.remove('hidden');
-                overlay.classList.remove('hidden');
-            } else {
-                userDropdown.classList.add('hidden');
-                overlay.classList.add('hidden');
+            if (userDropdown) {
+                const isHidden = userDropdown.classList.contains('hidden');
+                if (isHidden) {
+                    userDropdown.classList.remove('hidden');
+                    overlay.classList.remove('hidden');
+                } else {
+                    userDropdown.classList.add('hidden');
+                    overlay.classList.add('hidden');
+                }
             }
         }
 
-        // Event listeners
-        menuBtn.addEventListener('click', openSideMenu);
-        azBtn.addEventListener('click', openSideMenu);
-        closeMenuBtn.addEventListener('click', closeSideMenu);
-        userMenuBtn.addEventListener('click', toggleUserDropdown);
+        // Dropdown toggle functionality (Offers tab dropdown)
+        if (dropdownToggle) {
+            dropdownToggle.addEventListener('click', () => {
+                const isHidden = dropdownMenu.classList.contains('hidden');
+                
+                if (isHidden) {
+                    dropdownMenu.classList.remove('hidden');
+                    dropdownIcon.classList.remove('fa-chevron-down');
+                    dropdownIcon.classList.add('fa-chevron-up');
+                } else {
+                    dropdownMenu.classList.add('hidden');
+                    dropdownIcon.classList.remove('fa-chevron-up');
+                    dropdownIcon.classList.add('fa-chevron-down');
+                }
+            });
+
+            // Handle option selection
+            dropdownOptions.forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    
+                    // Get selected text
+                    const selectedText = option.textContent.trim();
+                    
+                    // Update dropdown button text
+                    dropdownToggle.querySelector('span').textContent = `Odd Display Type: ${selectedText}`;
+                    
+                    // Remove active class from all options
+                    dropdownOptions.forEach(opt => {
+                        opt.classList.remove('bg-[#d4f4e8]', 'text-[#2EC193]', 'font-medium');
+                        opt.classList.add('text-gray-700', 'hover:bg-gray-100');
+                    });
+                    
+                    // Add active class to selected option
+                    option.classList.add('bg-[#d4f4e8]', 'text-[#2EC193]', 'font-medium');
+                    option.classList.remove('text-gray-700', 'hover:bg-gray-100');
+                    
+                    // Close dropdown
+                    dropdownMenu.classList.add('hidden');
+                    dropdownIcon.classList.remove('fa-chevron-up');
+                    dropdownIcon.classList.add('fa-chevron-down');
+                });
+            });
+        }
+
+        // Tab switching functionality
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+                
+                // Remove active class from all tabs
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('tab-active');
+                    btn.classList.add('tab-inactive');
+                });
+                
+                // Add active class to clicked tab
+                button.classList.remove('tab-inactive');
+                button.classList.add('tab-active');
+                
+                // Hide all content
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show target content
+                document.getElementById(`${targetTab}-content`).classList.remove('hidden');
+            });
+        });
+
+        // Event listeners for menu buttons
+        if (menuBtn) {
+            menuBtn.addEventListener('click', openSideMenu);
+        }
+        if (azBtn) {
+            azBtn.addEventListener('click', openSideMenu);
+        }
+        if (closeMenuBtn) {
+            closeMenuBtn.addEventListener('click', closeSideMenu);
+        }
+        if (userMenuBtn) {
+            userMenuBtn.addEventListener('click', toggleUserDropdown);
+        }
         
+        // Overlay click handler
         overlay.addEventListener('click', () => {
             closeSideMenu();
-            userDropdown.classList.add('hidden');
+            if (userDropdown) {
+                userDropdown.classList.add('hidden');
+            }
             overlay.classList.add('hidden');
         });
 
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
-            if (!userMenuBtn.contains(e.target) && !userDropdown.contains(e.target)) {
-                userDropdown.classList.add('hidden');
-                if (sideMenu.classList.contains('hidden')) {
-                    overlay.classList.add('hidden');
+            if (userDropdown && userMenuBtn) {
+                if (!userMenuBtn.contains(e.target) && !userDropdown.contains(e.target)) {
+                    userDropdown.classList.add('hidden');
+                    if (sideMenu.classList.contains('hidden')) {
+                        overlay.classList.add('hidden');
+                    }
                 }
             }
         });
 
         // Prevent dropdown from closing when clicking inside
-        userDropdown.addEventListener('click', (e) => {
-            e.stopPropagation();
+        if (userDropdown) {
+            userDropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeSideMenu();
+                if (userDropdown) {
+                    userDropdown.classList.add('hidden');
+                }
+                overlay.classList.add('hidden');
+            }
         });
     </script>
 </body>

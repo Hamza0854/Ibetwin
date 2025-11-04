@@ -125,6 +125,28 @@
         .user-stake-input {
             width: 60px;
         }
+        .set-main-navtab .nav-tabs {
+            gap: 15px;
+            flex-wrap: nowrap;
+        overflow-x: scroll;
+        }
+        .set-main-navtab .nav-tabs li {
+        flex-shrink: 0;
+        }
+        .set-main-navtab .nav-tabs::-webkit-scrollbar {
+            height: 0px;
+            width: 0px;
+        }
+        .single-bet-data-container {
+            max-height: 240px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        @media only screen and (max-width: 576px) {
+            .set-max-w-352 {
+                width: 100% !important;
+            }
+        }
      </style>
 </head>
 <body>
@@ -180,7 +202,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="single-bet-data align-items-center p-2">
+                                <div class="single-bet-data align-items-center p-2 set-border-bottom-1-box">
                                     <div class="row">
                                         <div class="col-8">
                                             <div>
@@ -192,6 +214,27 @@
                                         <div class="col-4">
                                             <div class="d-flex align-items-center gap-2 mb-2">
                                                 <p class="fw-semibold mb-0 stake-value set-font-15-title">2.30</p>
+                                                <input type="number" class="form-control form-control-sm user-stake-input text-center" placeholder="0">
+                                            </div>
+                                            <p class="fw-semibold user-stake-value mt-0 mb-2 set-font-15-title">0</p>
+                                            <button class="btn btn-danger set-color-light-red btn-sm w-100 remove-stake">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single-bet-data align-items-center p-2">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div>
+                                                <h6 class="fw-semibold mb-0 set-font-15-title">Mighty Tigers</h6>
+                                                <h6 class="fw-semibold mb-0 set-font-15-title">MAFCO</h6>
+                                                <small class="text-muted fw-semibold d-block set-font-12-sm">Race to 5th Corner | Home</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <p class="fw-semibold mb-0 stake-value set-font-15-title">1.91</p>
                                                 <input type="number" class="form-control form-control-sm user-stake-input text-center" placeholder="0">
                                             </div>
                                             <p class="fw-semibold user-stake-value mt-0 mb-2 set-font-15-title">0</p>
@@ -245,7 +288,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="set-multi-bet-data align-items-center p-2">
+                                <div class="set-multi-bet-data align-items-center p-2 set-border-bottom-1-box">
                                     <div class="row">
                                         <div class="col-8">
                                             <div>
@@ -258,6 +301,27 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <p class="fw-semibold mb-0 stake-value set-font-15-title bg-black text-white w-100 text-center py-1 mb-2">
                                                     1.17
+                                                </p>
+                                            </div>
+                                            <button class="btn btn-danger set-color-light-red btn-sm w-100 remove-stake">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="set-multi-bet-data align-items-center p-2">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div>
+                                                <h6 class="fw-semibold mb-0 set-font-15-title set-text-pure-black">Napoli</h6>
+                                                <h6 class="fw-semibold mb-0 set-font-15-title set-text-pure-black">Eintracht Frankfurt</h6>
+                                                <small class="text-muted fw-semibold d-block set-font-12-sm">1x2 | Draw</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <p class="fw-semibold mb-0 stake-value set-font-15-title bg-black text-white w-100 text-center py-1 mb-2">
+                                                    4.20
                                                 </p>
                                             </div>
                                             <button class="btn btn-danger set-color-light-red btn-sm w-100 remove-stake">
@@ -412,20 +476,31 @@
                 <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-tab-pane" type="button" role="tab" aria-controls="all-tab-pane" aria-selected="true">All</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="main-tab" data-bs-toggle="tab" data-bs-target="#main-tab-pane" type="button" role="tab" aria-controls="main-tab-pane" aria-selected="false">Main</button>
+                <button class="nav-link" id="main-tab" data-bs-toggle="tab" data-bs-target="#main-tab-pane" type="button" role="tab" aria-controls="main-tab-pane" aria-selected="false">Goals</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="goal-tab" data-bs-toggle="tab" data-bs-target="#goal-tab-pane" type="button" role="tab" aria-controls="goal-tab-pane" aria-selected="false">Goal</button>
+                <button class="nav-link" id="goal-tab" data-bs-toggle="tab" data-bs-target="#goal-tab-pane" type="button" role="tab" aria-controls="goal-tab-pane" aria-selected="false">HT-FT</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="card-tab" data-bs-toggle="tab" data-bs-target="#card-tab-pane" type="button" role="tab" aria-controls="card-tab-pane" aria-selected="false">Corner + Cards</button>
+                <button class="nav-link" id="card-tab" data-bs-toggle="tab" data-bs-target="#card-tab-pane" type="button" role="tab" aria-controls="card-tab-pane" aria-selected="false">Asian Lines</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="half-tab" data-bs-toggle="tab" data-bs-target="#half-tab-pane" type="button" role="tab" aria-controls="half-tab-pane" aria-selected="false">1<sup>°</sup>/2<sup>°</sup> Half</button>
+                <button class="nav-link" id="half-tab" data-bs-toggle="tab" data-bs-target="#half-tab-pane" type="button" role="tab" aria-controls="half-tab-pane" aria-selected="false">Corners</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="minute-tab" data-bs-toggle="tab" data-bs-target="#minute-tab-pane" type="button" role="tab" aria-controls="minute-tab-pane" aria-selected="false">Minute</button>
+                <button class="nav-link" id="minute-tab" data-bs-toggle="tab" data-bs-target="#minute-tab-pane" type="button" role="tab" aria-controls="minute-tab-pane" aria-selected="false">Goal Line</button>
             </li>
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" type="button" role="tab" >Correct Score</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" type="button" role="tab" >Cards</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" type="button" role="tab" >Other</button>
+            </li>
+
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active text-white" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
