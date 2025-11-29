@@ -2571,7 +2571,7 @@ body{
 
 .modal-header {
     background-color: #1a7a5e;
-    padding: 15px 20px;
+    padding: 12px;
 }
 
 .search-modal-container {
@@ -2598,14 +2598,16 @@ body{
 .btn-close-custom {
     background: none;
     border: none;
-    color: #f70000 !important;
+    color: #ffd700 !important;
     font-size: 14px;
     cursor: pointer;
     padding: 5px 10px;
     white-space: nowrap;
     font-weight: 700;
 }
-
+.btn-close-custom i {
+    font-size: 14px;
+}
 .btn-close-custom:hover {
     opacity: 0.8;
 }
